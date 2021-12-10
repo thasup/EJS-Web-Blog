@@ -2,5 +2,13 @@
 
 <h1>Home</h1>
 <p><%= ejsHomeContent %></p>
+<hr>
+<% console.log(ejsPost); %>
+<% ejsPost.forEach((post) => {  %>
+<h1><%= post.title %></h1>
+<p><%= post.text %></p>
+<% });  %>
+
+
 
 <%- include("./partials/footer"); -%>

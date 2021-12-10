@@ -15,8 +15,10 @@ app.use(express.static("public"));
 const postData = [];
 
 app.get("/", (req, res) => {
+
   res.render("home", {
-    ejsHomeContent: homeStartingContent
+    ejsHomeContent: homeStartingContent,
+    ejsPost: postData
   });
 });
 
@@ -44,7 +46,7 @@ app.post("/compose", (req, res) => {
   // console.log(post);
 
   postData.push(post);
-  console.log(postData);
+  // console.log(postData);
 
   res.redirect("/");
 });
