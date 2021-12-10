@@ -12,20 +12,42 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+const postData = [];
+
 app.get("/", (req, res) => {
   res.render("home", {
-    ejsHomeContent: homeStartingContent,
-    ejsAboutContent: aboutContent,
+    ejsHomeContent: homeStartingContent
+  });
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", {
+    ejsAboutContent: aboutContent
+  });
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact", {
     ejsContactContent: contactContent
   });
 });
 
+app.get("/compose", (req, res) => {
+  res.render("compose");
+});
 
+app.post("/compose", (req, res) => {
+  let post = {
+    title: req.body.postTitle,
+    text: req.body.postText
+  };
+  // console.log(post);
 
+  postData.push(post);
+  console.log(postData);
 
-
-
-
+  res.redirect("/");
+});
 
 
 
