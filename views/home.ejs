@@ -1,12 +1,17 @@
 <%- include("./partials/header"); -%>
 
-<h1>Home</h1>
-<p><%= ejsHomeContent %></p>
-<hr>
+    <h1>Home</h1>
+    <p><%= ejsHomeContent %></p>
+    <hr>
 <% console.log(ejsPost); %>
 <% ejsPost.forEach((post) => {  %>
-<h1><%= post.title %></h1>
-<p><%= post.text %></p>
+<% const truncatedText = `${post.text.substring(0, 100)} ...` %>
+    <h1><%= post.title %></h1>
+    <p>
+    <%= truncatedText %>
+    <a href="/posts/<%= post.title %>">read more</a>
+    </p>
+
 <% });  %>
 
 

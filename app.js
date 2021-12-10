@@ -61,7 +61,7 @@ app.get("/posts/:postName", (req, res) => {
 
     if (requestedTitle === storedTitle) {
       console.log("Match found");
-      console.log(postData);
+      // console.log(postData);
       res.render("post", { ejsPostContent: post });
     } else {
       console.log("Not a Match");
