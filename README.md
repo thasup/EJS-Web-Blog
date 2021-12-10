@@ -27,7 +27,7 @@ A web blog that uses **EJS** to create a template and run javascript on HTML. It
 1. clone this git on your computer
 2. install [Node.js](https://nodejs.org/en/) 
 3. run command `npm install` on terminal
-4. run command `nodemon app` on terminal
+4. run command `npm start` on terminal
 5. go to `http://localhost:3000/`
 6. happy!
 
