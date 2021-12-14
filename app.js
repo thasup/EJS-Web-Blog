@@ -41,13 +41,19 @@ const postSchema = new mongoose.Schema({
   title: String,
   content: String
 });
-const post = mongoose.model("Post", postSchema);
+const Post = mongoose.model("Post", postSchema);
 
 // GET route for root
 app.get("/", (req, res) => {
-  res.render("home", {
-    ejsHomeContent: homeStartingContent,
-    ejsPost: postData
+  Post.find({}, (err, foundPost) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("home", {
+        ejsHomeContent: homeStartingContent,
+        ejsPost: foundPost
+      });
+    }
   });
 });
 
@@ -72,14 +78,12 @@ app.get("/compose", (req, res) => {
 
 // POST route for retrieve input data from compose page
 app.post("/compose", (req, res) => {
-  let post = {
+  const post = new Post({
     title: req.body.postTitle,
-    text: req.body.postText
-  };
-  // console.log(post);
+    content: req.body.postText
+  });
 
-  postData.push(post);
-  // console.log(postData);
+  post.save();
 
   res.redirect("/");
 });
