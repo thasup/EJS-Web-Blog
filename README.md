@@ -2,7 +2,7 @@
 
 # EJS-Web-Blog
 <!-- Describe your project in brief -->
-A web blog that uses **EJS** to create a template and run javascript on HTML. It contains a function to post a new article and link all pages with Express's route method.
+A web blog that uses **EJS** to create a template and run javascript on HTML. It contains a function that you can post a new article that stores all data on the **MongoDB** database and links all post pages with Express's route method.
 
 [EJS Web Blog](https://thasup-ejs-web-blog.herokuapp.com/)
 
@@ -19,6 +19,7 @@ A web blog that uses **EJS** to create a template and run javascript on HTML. It
 [(Back to top)](#table-of-contents)
 
 - Post new article on blog
+- Store all poses on database
 - Linked all pages to freely navigate on the website
 
 # Install
@@ -50,3 +51,5 @@ A web blog that uses **EJS** to create a template and run javascript on HTML. It
 - Node.js
 - Express.js
 - Heroku
+- Mongoose
+- MongoDB
